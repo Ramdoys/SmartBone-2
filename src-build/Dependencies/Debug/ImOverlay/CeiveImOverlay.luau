@@ -122,7 +122,7 @@ end
 function ImOverlay:m_Pool()
 
 	
-for _, Obj in self.BackFrame:GetChildren() do
+for _, Obj in self.BackFrame:QueryDescendants("> :not(UIListLayout, [Visible = false])") do
 		if Obj:IsA("UIListLayout") or not Obj.Visible then
 			continue
 		end
